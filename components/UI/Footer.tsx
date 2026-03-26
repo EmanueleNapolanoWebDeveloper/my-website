@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import Script from 'next/script'
 
 const currentYear = new Date().getFullYear()
 
@@ -182,14 +183,27 @@ export default function Footer() {
             © {currentYear} EN Web Developer. Tutti i diritti riservati.
           </p>
           <div className="flex items-center gap-5">
-            <Link href="/privacy" className="text-xs text-white/25 hover:text-white/60 transition-colors">
-              Privacy policy
-            </Link>
-            <Link href="/cookie" className="text-xs text-white/25 hover:text-white/60 transition-colors">
-              Cookie policy
-            </Link>
+            <a
+              href="https://www.iubenda.com/privacy-policy/14430874"
+              className="iubenda-white iubenda-noiframe iubenda-embed text-xs text-white/25 hover:text-white/60 transition-colors no-underline"
+              title="Privacy Policy"
+            >
+              Privacy Policy
+            </a>
+            <a
+              href="https://www.iubenda.com/privacy-policy/14430874/cookie-policy"
+              className="iubenda-white iubenda-noiframe iubenda-embed text-xs text-white/25 hover:text-white/60 transition-colors no-underline"
+              title="Cookie Policy"
+            >
+              Cookie Policy
+            </a>
           </div>
         </div>
+
+        <Script
+          src="https://cdn.iubenda.com/iubenda.js"
+          strategy="lazyOnload"
+        />
 
       </div>
     </footer>

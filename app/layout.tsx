@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/UI/Navbar";
 import Footer from "@/components/UI/Footer";
 
+import { GoogleTagManager } from '@next/third-parties/google'
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -49,6 +51,7 @@ export default function RootLayout({
       lang="it"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <GoogleTagManager gtmId="GTM-MQXT2QZN " />
       <body className="min-h-full flex flex-col">
         <Navbar />
         {children}
