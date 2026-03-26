@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run:*)",
+      "Bash(find 'C:/Users/emanu/work/Next.js - react/enwebsite/public' -name *.png -o -name *.jpg -o -name *.webp)",
+      "Bash(taskkill:*)",
+      "Bash(cmd.exe /c \"taskkill /PID 12372 /F\")",
+      "Bash(cmd.exe /c \"taskkill /PID 12372 /F 2>&1\")",
+      "Bash(cmd.exe /c \"taskkill /PID 12372 /F & echo done\")",
+      "Bash(cmd.exe /c taskkill /PID 12372 /F)",
+      "Bash(powershell -Command \"Stop-Process -Id 12372 -Force -ErrorAction SilentlyContinue; Write-Output 'done'\")",
+      "Bash(powershell -Command \"Get-Process -Id 12372 -ErrorAction SilentlyContinue\")"
+    ]
+  }
+}
