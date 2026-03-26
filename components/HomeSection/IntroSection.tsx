@@ -21,20 +21,15 @@ export default function IntroSection() {
           />
 
           {/* Cornice immagine */}
-          <div className="relative rounded-2xl overflow-hidden border border-white/8 aspect-[4/5] bg-white/4">
-            {/*
-              Sostituisci il placeholder qui sotto con:
-              <Image src="/il-tuo-file.jpg" alt="descrizione" fill className="object-cover" />
-            */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-white/20">
-              <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-                <rect x="3" y="3" width="18" height="18" rx="2"/>
-                <circle cx="8.5" cy="8.5" r="1.5"/>
-                <path d="M21 15l-5-5L5 21"/>
-              </svg>
-              <span className="text-sm font-medium tracking-wide">La tua immagine qui</span>
-              <span className="text-xs opacity-60">Sostituisci con &lt;Image /&gt;</span>
-            </div>
+          <div className="relative rounded-2xl overflow-hidden border border-white/8 aspect-[4/5]">
+            <Image
+              src="/assets/webSiteImages/enphoto.jpg"
+              alt="Emanuele Napolano — EN Web Developer"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-contain"
+              priority
+            />
           </div>
 
           {/* Badge flottante */}

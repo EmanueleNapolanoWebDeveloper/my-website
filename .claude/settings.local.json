@@ -9,7 +9,8 @@
       "Bash(cmd.exe /c \"taskkill /PID 12372 /F & echo done\")",
       "Bash(cmd.exe /c taskkill /PID 12372 /F)",
       "Bash(powershell -Command \"Stop-Process -Id 12372 -Force -ErrorAction SilentlyContinue; Write-Output 'done'\")",
-      "Bash(powershell -Command \"Get-Process -Id 12372 -ErrorAction SilentlyContinue\")"
+      "Bash(powershell -Command \"Get-Process -Id 12372 -ErrorAction SilentlyContinue\")",
+      "Bash(find 'C:/Users/emanu/work/Next.js - react/enwebsite/public/assets/webSiteImages' -iname *enphoto* -o -iname *photo*)"
     ]
   }
 }

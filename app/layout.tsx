@@ -51,7 +51,10 @@ export default function RootLayout({
       lang="it"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <GoogleTagManager gtmId="GTM-MQXT2QZN " />
+      <GoogleTagManager
+        gtmId={process.env.NEXT_PUBLIC_GTM_ID!}
+        gtmScriptUrl="https://www.googletagmanager.com/gtm.js" />
+        
       <body className="min-h-full flex flex-col">
         <Navbar />
         {children}

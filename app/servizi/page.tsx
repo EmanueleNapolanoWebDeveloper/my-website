@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -104,6 +105,7 @@ const services = [
     ],
     color: 'indigo',
     ideal: 'Ideale per: negozi, studi professionali, artigiani, ristoranti, aziende B2B',
+    image: '/assets/webSiteImages/pageservice/sitoweb.png',
   },
   {
     tag: 'Vendite online',
@@ -119,6 +121,7 @@ const services = [
     ],
     color: 'violet',
     ideal: 'Ideale per: negozi fisici che vogliono vendere online, produttori, artigiani',
+    image: '/assets/webSiteImages/pageservice/ecommerce.png',
   },
   {
     tag: 'Gestione contenuti',
@@ -134,6 +137,7 @@ const services = [
     ],
     color: 'sky',
     ideal: 'Ideale per: aziende con aggiornamenti frequenti, studi, associazioni',
+    image: '/assets/webSiteImages/pageservice/CMS.png',
   },
   {
     tag: 'Visibilità su Google',
@@ -149,6 +153,7 @@ const services = [
     ],
     color: 'emerald',
     ideal: 'Ideale per: qualsiasi attività che vuole più clienti da Google',
+    image: '/assets/webSiteImages/pageservice/seo.png',
   },
   {
     tag: 'Performance & sicurezza',
@@ -164,6 +169,7 @@ const services = [
     ],
     color: 'amber',
     ideal: 'Ideale per: chi ha già un sito e vuole stare tranquillo',
+    image: '/assets/webSiteImages/pageservice/gestionali.png',
   },
   {
     tag: 'Comunicazione',
@@ -179,6 +185,7 @@ const services = [
     ],
     color: 'rose',
     ideal: 'Ideale per: e-commerce, negozi, studi con lista clienti attiva',
+    image: '/assets/webSiteImages/pageservice/marketing.png',
   },
 ]
 
@@ -364,24 +371,21 @@ export default function ServiziPage() {
           </div>
 
           <div className="flex flex-col gap-8">
-            {services.map(({ tag, title, desc, features, color, ideal }, i) => {
+            {services.map(({ tag, title, desc, features, color, ideal, image }, i) => {
               const c = colorMap[color]
               return (
                 <div key={title} className={`group rounded-3xl border ${c.border} bg-white overflow-hidden transition-all duration-300 hover:shadow-lg`}>
                   <div className={`grid grid-cols-1 lg:grid-cols-2 ${i % 2 === 1 ? 'lg:[&>*:first-child]:order-last' : ''}`}>
 
-                    {/* Immagine placeholder */}
-                    <div className="relative aspect-[4/3] lg:aspect-auto bg-gray-100 flex flex-col items-center justify-center gap-3 text-gray-300 min-h-64">
-                      {/*
-                        Sostituisci con:
-                        <Image src="/assets/servizi/nome.jpg" alt={title} fill className="object-cover" />
-                      */}
-                      <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-                        <rect x="3" y="3" width="18" height="18" rx="2"/>
-                        <circle cx="8.5" cy="8.5" r="1.5"/>
-                        <path d="M21 15l-5-5L5 21"/>
-                      </svg>
-                      <span className="text-sm font-medium">Immagine — {title}</span>
+                    {/* Immagine */}
+                    <div className="relative aspect-[4/3] lg:aspect-auto min-h-64 overflow-hidden">
+                      <Image
+                        src={image}
+                        alt={title}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
                       <div className="absolute top-4 left-4">
                         <span className={`inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold ${c.badge}`}>
                           {tag}
